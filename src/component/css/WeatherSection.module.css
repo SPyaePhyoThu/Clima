@@ -1,0 +1,93 @@
+.weatherSection {
+  font-size: 1.6rem;
+  height: 300px;
+  box-sizing: border-box;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.6px;
+}
+.image {
+  height: 300px;
+  width: 96%;
+
+  display: grid;
+  border-radius: 3rem;
+  margin: 0 auto;
+  z-index: 1;
+  background-size: cover;
+  background-position: bottom;
+}
+.overlay {
+  background: linear-gradient(rgba(0, 38, 88, 0.3), rgba(0, 38, 88, 0.3));
+  border-radius: 3rem;
+  height: 100%;
+  width: 100%;
+  padding: 1rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr;
+  border: 1px solid white;
+}
+.dates {
+  font-family: "Work Sans", sans-serif;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  grid-row-gap: 0.6rem;
+}
+.day {
+  font-size: 3rem;
+}
+
+.weatherContainer {
+  display: grid;
+  justify-items: center;
+  align-items: end;
+  grid-row-gap: 2rem;
+}
+.weather {
+  align-self: self-start;
+  font-size: 2.5rem;
+  text-align: center;
+}
+.rightSection {
+  text-align: end;
+  justify-self: end;
+  font-family: "Work Sans", sans-serif;
+  display: grid;
+  grid-template-rows: 1fr max-content;
+  grid-row-gap: 0.6rem;
+}
+.place {
+  display: grid;
+  grid-template-rows: repeat(2, max-content);
+  grid-row-gap: 0.6rem;
+}
+.city {
+  font-size: 3rem;
+}
+.country,
+.date {
+  font-size: 1.8rem;
+}
+@media (max-width: 780px) {
+  .overlay {
+    padding: 1rem 2rem;
+  }
+}
+@media (max-width: 500px) {
+  .day {
+    font-size: 2.6rem;
+  }
+  .city {
+    font-size: 2.6rem;
+  }
+  .country,
+  .date {
+    font-size: 1.6rem;
+  }
+  .rightSection {
+    grid-template-rows: 1fr 0.3fr;
+  }
+  .overlay {
+    padding: 1rem 1.5rem;
+  }
+}

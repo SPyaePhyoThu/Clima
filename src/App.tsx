@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Today from "./page/Today";
+import Tomorrow from "./page/Tomorrow";
+import RootLayout from "./page/root";
+import ErrorPage from "./page/ErrorPage";
+import Yesterday from "./page/Yesterday";
+import NextDays from "./page/NextDays";
+import LoadingPage from "./page/LoadingPage";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    errorElement: <ErrorPage />,
+    children: [
+      { index: true, element: <LoadingPage /> },
+      {
+        element: <RootLayout />,
+
+        children: [
+          { path: "today", element: <Today /> },
+          { path: "tomorrow", element: <Tomorrow /> },
+          { path: "yesterday", element: <Yesterday /> },
+          { path: "nextDays", element: <NextDays /> },
+        ],
+      },
+    ],
+  },
+  { path: "error", element: <ErrorPage /> },
+]);
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

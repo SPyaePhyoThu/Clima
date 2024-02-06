@@ -1,0 +1,8 @@
+.errorPage {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+.heading {
+  font-size: 3rem;
+}

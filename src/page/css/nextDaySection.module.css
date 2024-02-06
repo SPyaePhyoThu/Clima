@@ -1,0 +1,104 @@
+.nextDaySection {
+  background-color: var(--color--main);
+  padding: 0 2rem;
+}
+.cfBar {
+  display: grid;
+  justify-self: end;
+}
+.boxSection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  padding-top: 2rem;
+}
+.weatherTempBox {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+}
+.weatherBox {
+  padding-top: 2rem;
+  display: grid;
+  grid-template-rows: 1fr max-content;
+  justify-content: end;
+  justify-items: center;
+  align-items: end;
+  grid-row-gap: 1rem;
+}
+.weatherText {
+  text-align: center;
+  align-self: flex-start;
+  padding-bottom: 2rem;
+}
+.forecastBox {
+  height: 100%;
+  width: 360px;
+  border: 1px solid white;
+  border-radius: 3rem;
+  padding: 0.5rem 1rem;
+}
+
+.heading {
+  padding: 1rem 0.5rem;
+  padding-bottom: 0;
+  font-size: 2rem;
+  font-weight: 900;
+  /* text-align: center; */
+}
+.temperature {
+  font-size: 6rem;
+  text-align: center;
+  padding: 2rem 0;
+  align-self: center;
+}
+.detailsBox {
+  list-style: none;
+  padding: 0 2rem;
+  padding-bottom: 1rem;
+}
+.details {
+  height: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+.name {
+  justify-self: start;
+}
+.value {
+  justify-self: end;
+  text-align: right;
+}
+
+@media (max-width: 1100px) {
+  .forecastBox {
+    width: 300px;
+
+    padding: 0.5rem;
+  }
+}
+@media (max-width: 780px) {
+  .weatherTempBox {
+    grid-template-columns: 0.7fr 1fr;
+  }
+  .nextDaySection {
+    background-color: var(--color--main);
+    padding: 0;
+  }
+  .boxSection {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-row-gap: 7rem;
+  }
+}
+@media (max-width: 650px) {
+  .weatherTempBox {
+    grid-template-columns: 0.7fr 1fr;
+  }
+  .boxSection {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 3rem;
+  }
+}

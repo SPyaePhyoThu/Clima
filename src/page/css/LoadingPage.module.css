@@ -1,0 +1,22 @@
+.loading {
+  height: 100dvh;
+  background-color: var(--color--main);
+  display: grid;
+  grid-template-rows: 0.8fr 1fr;
+}
+.iconBox {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  justify-content: center;
+  justify-items: center;
+  align-self: flex-end;
+  grid-column-gap: 2rem;
+}
+
+.heading {
+  font-size: 10rem;
+  justify-self: center;
+  align-self: start;
+  color: #002658;
+  font-family: "Kanit", sans-serif;
+}
