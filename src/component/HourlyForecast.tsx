@@ -43,7 +43,7 @@ const HourlyForecast = (props: dataProps) => {
     } else {
       setCurrentIndex(16);
     }
-  }, []);
+  }, [offsetTime]);
 
   //styles for icon
 

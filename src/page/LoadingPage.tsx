@@ -44,7 +44,7 @@ const LoadingPage = () => {
       }
     };
     fetchData();
-  }, [dispatch]);
+  }, [dispatch, navigate]);
 
   const SunStyle: React.CSSProperties = {
     height: "48px",
