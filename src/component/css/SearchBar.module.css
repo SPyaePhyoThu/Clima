@@ -17,11 +17,13 @@
 
 .glassBox {
   display: grid;
-  height: 90%;
+  height: 100%;
+  width: 5rem;
   align-content: center;
+  justify-content: center;
   justify-self: end;
   background-color: #000000;
-  border-radius: 5px;
+  border-radius: 1.7rem;
   cursor: pointer;
   border: none;
 }

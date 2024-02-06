@@ -8,6 +8,7 @@
   align-items: center;
   justify-items: center;
   border-radius: 50px;
+
   font-weight: bold;
   color: black;
   margin: 0 0.5rem;
@@ -15,9 +16,11 @@
 .selected {
   color: white;
   background-color: black;
+  margin-top: 5%;
   height: 90%;
   width: 90%;
   border-radius: 50px;
+
   display: grid;
   align-content: center;
   justify-content: center;
@@ -26,9 +29,11 @@
 }
 .unselected {
   background-color: transparent;
+  margin-top: 5%;
   height: 90%;
   width: 90%;
   border-radius: 50px;
+
   display: grid;
   align-content: center;
   justify-content: center;
