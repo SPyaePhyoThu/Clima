@@ -8,7 +8,7 @@ import {
   GeoapifyContext,
   GeoapifyGeocoderAutocomplete,
 } from "@geoapify/react-geocoder-autocomplete";
-import "@geoapify/geocoder-autocomplete/styles/climaCustomStyle.css";
+import "@geoapify/geocoder-autocomplete/styles/round-borders.css";
 import { fetchAllWeatherData } from "../store/weatherAction";
 import { AppDispatch } from "../store/store";
 import { useNavigate } from "react-router-dom";
@@ -44,16 +44,20 @@ const SearchBar = () => {
   };
   return (
     <div className={classes.searchBar}>
+      <button
+        disabled={city === ""}
+        onClick={searchhandler}
+        className={classes.glassBox}
+      >
+        <MagnifyingGlass />
+      </button>
       <GeoapifyContext apiKey={process.env.REACT_APP_GEOAPIFI_API_KEY}>
         <GeoapifyGeocoderAutocomplete
-          placeholder="Enter a city"
+          placeholder="City"
           value={city}
           placeSelect={onPlaceSelect}
         />
       </GeoapifyContext>
-      <div onClick={searchhandler} className={classes.glassBox}>
-        <MagnifyingGlass />
-      </div>
     </div>
   );
 };

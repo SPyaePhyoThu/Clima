@@ -10,6 +10,7 @@ const Header = () => {
     <div className={classes.header}>
       <img className={classes.logo} src={logo} alt="logo" />
       <h1 className={classes.heading}>Clima</h1>
+
       <NavigationBar />
       <SearchBar />
     </div>
