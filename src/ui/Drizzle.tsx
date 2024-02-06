@@ -5,7 +5,6 @@ interface iconProps {
 const Drizzle = (props: iconProps) => {
   return (
     <svg
-      fill="#ffffff"
       style={props.style}
       viewBox="0 0 32 32"
       id="icon"
