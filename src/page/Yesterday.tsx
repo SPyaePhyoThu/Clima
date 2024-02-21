@@ -11,6 +11,7 @@ import {
   formatDataForWeatherSection,
 } from "../util/DataFormat";
 import { useSelector } from "react-redux";
+import Weather from "../ui/Weather";
 
 const Yesterday = () => {
   //get data from redux store
@@ -34,6 +35,7 @@ const Yesterday = () => {
       <WeatherSection dateData={yesterdayData} data={dataForWeatherSection} />
       <WeatherBar data={dataForWeatherBar} />
       <Highlight data={dataForHighlight} day={"Yesterday's Highlights"} />
+      <Weather />
     </div>
   );
 };

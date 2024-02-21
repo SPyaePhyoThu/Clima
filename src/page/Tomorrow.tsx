@@ -11,6 +11,7 @@ import {
   formatDataForHighllight,
   formatDataForWeatherSection,
 } from "../util/DataFormat";
+import Weather from "../ui/Weather";
 
 const Tomorrow = () => {
   //get data from redux store
@@ -35,6 +36,7 @@ const Tomorrow = () => {
       <WeatherBar data={dataForWeatherBar} />
 
       <Highlight data={dataForHighlight} day={"Tomorrow's Forecast"} />
+      <Weather />
     </div>
   );
 };

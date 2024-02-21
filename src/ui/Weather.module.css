@@ -1,0 +1,16 @@
+.weather {
+  margin: 0 auto;
+  width: 500px;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+}
+@media (max-width: 768px) {
+  .weather {
+    width: 300px;
+  }
+}
+@media (max-width: 500px) {
+  .weather {
+    width: 250px;
+  }
+}
