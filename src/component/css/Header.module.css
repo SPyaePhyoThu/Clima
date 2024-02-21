@@ -16,8 +16,8 @@
   color: black;
 }
 .logo {
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
 }
 @media (max-width: 1025px) {
   .header {
@@ -25,6 +25,10 @@
   }
 }
 @media (max-width: 768px) {
+  .logo {
+    height: 40px;
+    width: 40px;
+  }
   .heading {
     font-size: 5rem;
   }
@@ -35,6 +39,10 @@
   }
 }
 @media (max-width: 500px) {
+  .logo {
+    height: 30px;
+    width: 30px;
+  }
   .heading {
     font-size: 4rem;
   }

@@ -50,6 +50,7 @@
   text-align: center;
   padding: 2rem 0;
   align-self: center;
+  color: black;
 }
 .detailsBox {
   list-style: none;
@@ -69,6 +70,9 @@
 .value {
   justify-self: end;
   text-align: right;
+  color: black;
+
+  font-weight: bold;
 }
 
 @media (max-width: 1100px) {

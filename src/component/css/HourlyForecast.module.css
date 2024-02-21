@@ -64,6 +64,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
+  color: black;
+  font-size: 2rem;
+  font-weight: bold;
 }
 .times {
   font-size: 2rem;

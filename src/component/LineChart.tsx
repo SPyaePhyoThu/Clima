@@ -39,7 +39,7 @@ const Chart: React.FC<ChartProps> = (props) => {
               color: "transparent",
             },
             ticks: {
-              color: "#002658",
+              color: "#000000",
               font: {
                 size: deviceWidth > 500 ? 13 : 11,
                 weight: 600,
@@ -53,7 +53,7 @@ const Chart: React.FC<ChartProps> = (props) => {
               color: "white",
             },
             ticks: {
-              color: "#002658",
+              color: "#000000",
               maxTicksLimit: 6,
               stepSize: 1,
               font: {

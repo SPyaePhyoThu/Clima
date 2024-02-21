@@ -48,7 +48,7 @@
 .value {
   font-size: 2rem;
   font-weight: bold;
-  color: var(--color--night);
+  color: black;
 }
 @media (max-width: 1025px) {
   .weatherBar {

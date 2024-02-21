@@ -151,7 +151,7 @@ export const formatTimeToLocale = (time: string, offsetTime: number) => {
   const correctedHour =
     totalMinute > 60 ? Math.floor(hour) + 1 : Math.floor(hour);
 
-  return `${correctedHour}h${correctMinute}m`;
+  return `${correctedHour.toString().padStart(2, "0")}:${correctMinute}`;
 };
 
 //formatting data for houly forecast Section
