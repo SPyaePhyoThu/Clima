@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import classes from "./css/LoadingPage.module.css";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { fetchAllWeatherData } from "../store/weatherAction";
 import { AppDispatch } from "../store/store";
@@ -11,15 +11,20 @@ import Sunny from "../ui/Sunny";
 
 import HeavySnow from "../ui/HeavySnow";
 import NightTime from "../ui/NightTime";
-import HeavyRain from "../ui/HeavyRain";
+
+import Thunderstorm from "../ui/ThunderStorm";
 
 const LoadingPage = () => {
+  const [loadingStep, setLoadingStep] = useState(0);
   const navigate = useNavigate();
   const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setTimeout(() => setLoadingStep(1), 1000);
+        setTimeout(() => setLoadingStep(2), 2000);
+        setTimeout(() => setLoadingStep(3), 3000);
         //get User Location
         const location = await getUserLocation();
         await dispatch(fetchAllWeatherData(location));
@@ -32,13 +37,16 @@ const LoadingPage = () => {
         dispatch(weatherDataActions.selectCity(city));
         dispatch(weatherDataActions.selectCountry(country));
         const offsetTime = -(new Date().getTimezoneOffset() / 60);
-
         dispatch(weatherDataActions.selectOffsetTime(offsetTime));
+
+        // Set loading steps
+
+        setTimeout(() => setLoadingStep(4), 4000);
 
         // redirect to webpage
         setTimeout(() => {
           navigate("/today");
-        }, 4000);
+        }, 5000);
       } catch (error) {
         navigate("/error");
       }
@@ -47,8 +55,8 @@ const LoadingPage = () => {
   }, [dispatch, navigate]);
 
   const SunStyle: React.CSSProperties = {
-    height: "48px",
-    width: "48px",
+    height: "46px",
+    width: "46px",
     fill: "#ffffff",
   };
   const Style: React.CSSProperties = {
@@ -56,6 +64,7 @@ const LoadingPage = () => {
     width: "50px",
     fill: "#ffffff",
   };
+
   const NightStyle: React.CSSProperties = {
     height: "50px",
     width: "50px",
@@ -65,10 +74,10 @@ const LoadingPage = () => {
   return (
     <div className={classes.loading}>
       <div className={classes.iconBox}>
-        <Sunny style={SunStyle} />
-        <HeavyRain style={Style} />
-        <HeavySnow style={Style} />
-        <NightTime style={NightStyle} />
+        {loadingStep >= 1 && <Sunny style={SunStyle} />}
+        {loadingStep >= 2 && <Thunderstorm style={Style} />}
+        {loadingStep >= 3 && <HeavySnow style={Style} />}
+        {loadingStep >= 4 && <NightTime style={NightStyle} />}
       </div>
       <h1 className={classes.heading}>Clima</h1>
     </div>

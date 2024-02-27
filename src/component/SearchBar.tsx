@@ -12,6 +12,7 @@ import "@geoapify/geocoder-autocomplete/styles/round-borders.css";
 import { fetchAllWeatherData } from "../store/weatherAction";
 import { AppDispatch } from "../store/store";
 import { useNavigate } from "react-router-dom";
+import LoadingIcon from "../ui/Loading";
 
 const SearchBar = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -19,14 +20,17 @@ const SearchBar = () => {
   const [city, setCity] = useState<string>("");
   const [country, setCountry] = useState<string>("");
   const [offsetTime, setOffsetTime] = useState<number>(0);
+  const [loading, setLoading] = useState(false);
 
   const searchhandler = async () => {
+    setLoading(true);
     try {
       await dispatch(fetchAllWeatherData(city));
       dispatch(weatherDataActions.selectCity(city));
       dispatch(weatherDataActions.selectCountry(country));
       dispatch(weatherDataActions.selectOffsetTime(offsetTime));
       setCity("");
+      setLoading(false);
     } catch (error) {
       navigate("/error");
     }
@@ -49,7 +53,7 @@ const SearchBar = () => {
         onClick={searchhandler}
         className={classes.glassBox}
       >
-        <MagnifyingGlass />
+        {loading ? <LoadingIcon /> : <MagnifyingGlass />}
       </button>
       <GeoapifyContext apiKey={process.env.REACT_APP_GEOAPIFI_API_KEY}>
         <GeoapifyGeocoderAutocomplete
