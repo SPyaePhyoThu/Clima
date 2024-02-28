@@ -13,6 +13,7 @@ import HeavySnow from "../ui/HeavySnow";
 import NightTime from "../ui/NightTime";
 
 import Thunderstorm from "../ui/ThunderStorm";
+import LoadingIcon from "../ui/Loading";
 
 const LoadingPage = () => {
   const [loadingStep, setLoadingStep] = useState(0);
@@ -78,6 +79,9 @@ const LoadingPage = () => {
         {loadingStep >= 2 && <Thunderstorm style={Style} />}
         {loadingStep >= 3 && <HeavySnow style={Style} />}
         {loadingStep >= 4 && <NightTime style={NightStyle} />}
+      </div>
+      <div className={classes.loadingIcon}>
+        <LoadingIcon />
       </div>
       <h1 className={classes.heading}>Clima</h1>
     </div>
